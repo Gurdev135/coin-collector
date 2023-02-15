@@ -1,18 +1,28 @@
-const coins = [
-  'quarter',
-  'dime',
-  'nickel',
-  'penny',
-  'Franklin',
-  'Grant',
-  'Jackson',
-  'Hamilton',
-  'Washington',
-  'Lincoln',
-  'Jefferson'
-];
+// your code 
+// require the coins array
+const coins = require('./coins')
+
+function coinCollector(coins) {
+  const onlyCoins = [];
+
+  const desired = [
+    'quarter',
+    'dime',
+    'nickel',
+    'penny'
+  ];
+
+  for (let i = 0; i < coins.length; i++) {
+    const coin = coins[i];
+    if (desired.includes(coin)) {
+      onlyCoins.push(coins[i]);
+    }
+  }
+  return onlyCoins;
+}
+
+coinCollector(coins);
 
 // your code
-// export the coins array
-
-module.exports = coins;
+module.exports = coinCollector
+// export the coinCollector function
